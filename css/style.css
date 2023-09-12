@@ -1,0 +1,256 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root{
+    --scroll-bar-color: #333;
+    --mancilla: #000;
+    --scroll-thumb-hover-color: #fff;
+}
+
+html{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/*================== SCROLL BAR ==================*/
+
+::-webkit-scrollbar{
+    width: 11px;
+    background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb{
+    width: 100%;
+    background: var(--mancilla);
+    /* border-radius: 2em; */
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--scroll-thumb-hover-color);
+}
+
+/*================== MAIN CSS ==================*/
+body{
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.grid_container>*{
+    /* box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75); */
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.div1{
+    grid-area: div1;
+    background-color: #aef0c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    border: 3px solid #8c96a0;
+}
+
+.div2{
+    grid-area: div2;
+    background:transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+}
+
+.div2 div{
+    margin: 0;
+    border: 3px solid #8c96a0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px !important;
+    margin: 4px;
+    background-image: linear-gradient(to bottom, rgb(4, 116, 252), rgba(255, 255, 255, 0.95));
+    border-radius: 4px;
+}
+
+.div2 div a{
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.div3{
+    grid-area: div3;
+    background-image: linear-gradient(to bottom, rgb(4, 116, 252), rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.div4{
+    grid-area: div4;
+    background-image: linear-gradient(to bottom, rgb(230, 253, 60), rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.div5{
+    grid-area: div5;
+    background-image: linear-gradient(to bottom, rgb(230, 253, 60), rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.div6{
+    grid-area: div6;
+    background-image: linear-gradient(to bottom, rgb(230, 253, 60), rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.div7{
+    grid-area: div7;
+    background-image: linear-gradient(to bottom, rgb(230, 253, 60), rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.div8{
+    grid-area: div8;
+    background-image: linear-gradient(to bottom, rgb(253, 250, 60), rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.div9{
+    grid-area: div9;
+    background-image: linear-gradient(to bottom, gray, rgba(255, 255, 255, 0.95));
+    padding: 0;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #8c96a0;
+}
+
+.grid_container{/*cellphone*/
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "div1"
+        "div2"
+        "div3"
+        "div4"
+        "div5"
+        "div6"
+        "div7"
+        "div8"
+        "div9";
+    gap: 4px;
+}
+
+@media (min-width: 600px){/*tablet*/
+    .grid_container{
+        /* grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas: 
+            "header  header"
+            "navbar  navbar"
+            "sidebar main"
+            "footer  footer"; */
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 5% ;
+        padding-bottom: 5%;
+        /* padding: 10%; */
+        grid-template: 
+        "div2  div1" auto
+        "div3  div1" auto
+        "div4 div1" auto
+        "div5 div1" auto
+        "div6 div1" auto
+        "div7 div1" auto
+        "div8 div1" auto
+        "div9  div1"100px/
+        auto    150px;
+    }
+
+    .div1{
+        /* display: flex;
+        flex-direction: row; */
+    }
+
+    .div1 h2{
+        width: 100%;
+        -webkit-transform: rotate(90deg);
+        writing-mode: lr-tb;
+    }
+}
+
+@media (min-width: 900px){
+    .grid_container{/*desktop*/
+        /* grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas: 
+            "header  header"
+            "navbar  navbar"
+            "sidebar main"
+            "footer  footer"; */
+        padding-left: 25%;
+        padding-right: 25%;
+        padding-top: 2% ;
+        padding-bottom: 2%;
+        /* padding: 10%; */
+        grid-template: 
+        "div2  div2  div1" auto
+        "div3  div3  div1" auto
+        "div4  div5  div1" auto
+        "div6  div6  div1" auto
+        "div7  div7  div1" auto
+        "div8  div8  div1" auto
+        "div9  div9  div1"100px/
+        auto    auto  100px;
+    }
+}
